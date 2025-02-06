@@ -1,5 +1,9 @@
 /* Clase que lleva el merge sort
  * Link información sobre como funciona el merge sort: https://www.geeksforgeeks.org/merge-sort/
+ * Complejidad del mergesort:
+ *      Best Case: O(nlog(n))
+ *      Average Case: O(nlog(n))
+ *      Worst Case: O(nlog(n))
  */
 
 import java.util.*;

@@ -1,5 +1,9 @@
 /*Clase que lleva el quicksort
  * Link de la información acerca del quicksort: https://www.geeksforgeeks.org/quick-sort-algorithm/
+ * Complejidad
+ *      Best Case: O(nlog(n))
+ *      Average Case: O(nlog(n))
+ *      Worst Case: O(n^2)
  */
 
 import java.util.Arrays;
