@@ -9,36 +9,37 @@ public class MergeSort<T extends Comparable<T>> implements IGenericSort<T> {
     @Override
     public T[] sort(T[] arr) {
         if (arr.length <= 1)
-            return arr;
+            return arr.clone();
 
         int middle = arr.length / 2;
         T[] left = Arrays.copyOfRange(arr, 0, middle);
         T[] right = Arrays.copyOfRange(arr, middle, arr.length);
 
-        sort(left);
-        sort(right);
+        left = sort(left);
+        right = sort(right);
 
-        return merge(left, right);
+        return merge(left, right, arr.clone());
     }
 
-    private T[] merge(T[] left, T[] right) {
-        List<T> tempList = new ArrayList<>();
-        int i = 0, j = 0;
+    private T[] merge(T[] left, T[] right, T[] result) {
+        int i = 0, j = 0, k = 0;
 
         while (i < left.length && j < right.length) {
-            if (left[i].compareTo(right[j]) < 0) {
-                tempList.add(left[i++]);
+            if (left[i].compareTo(right[j]) <= 0) {
+                result[k++] = left[i++];
             } else {
-                tempList.add(right[j++]);
+                result[k++] = right[j++];
             }
         }
 
-        while (i < left.length)
-            tempList.add(left[i++]);
-        while (j < right.length)
-            tempList.add(right[j++]);
+        while (i < left.length) {
+            result[k++] = left[i++];
+        }
+        while (j < right.length) {
+            result[k++] = right[j++];
+        }
 
-        return tempList.toArray(Arrays.copyOf(left, tempList.size()));
+        return result;
     }
 
     public static void main(String[] args) {
