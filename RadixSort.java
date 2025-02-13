@@ -26,7 +26,6 @@ public class RadixSort<T extends Comparable<T>> implements IGenericSort<T> {
     }
 
     private void countSort(T[] arr, int n, int exp) {
-        @SuppressWarnings("unchecked")
         T[] output = Arrays.copyOf(arr, n);
         int[] count = new int[10];
 
