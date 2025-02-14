@@ -6,7 +6,7 @@
  *      Worst Case: O(nlog(n))
  */
 
-import java.util.*;
+import java.util.Arrays;
 
 public class MergeSort<T extends Comparable<T>> implements IGenericSort<T> {
 
@@ -44,13 +44,5 @@ public class MergeSort<T extends Comparable<T>> implements IGenericSort<T> {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        Integer[] arr = { 3, 1, 4, 1, 5, 9 };
-        MergeSort<Integer> sorter = new MergeSort<>();
-        Integer[] sortedArr = sorter.sort(arr);
-
-        System.out.println(Arrays.toString(sortedArr));
     }
 }

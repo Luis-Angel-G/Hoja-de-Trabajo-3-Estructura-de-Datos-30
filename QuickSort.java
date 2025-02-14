@@ -11,8 +11,9 @@ import java.util.Arrays;
 public class QuickSort<T extends Comparable<T>> implements IGenericSort<T> {
     @Override
     public T[] sort(T[] arr) {
-        quickSort(arr, 0, arr.length - 1);
-        return arr;
+        T[] copia = arr.clone();
+        quickSort(copia, 0, copia.length - 1);
+        return copia;
     }
 
     private void quickSort(T[] arr, int low, int high) {
@@ -41,13 +42,5 @@ public class QuickSort<T extends Comparable<T>> implements IGenericSort<T> {
         T temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-    }
-
-    public static void main(String[] args) {
-        Integer[] arr = { 3, 1, 4, 1, 5, 9 };
-        QuickSort<Integer> sorter = new QuickSort<>();
-        Integer[] sortedArr = sorter.sort(arr);
-
-        System.out.println(Arrays.toString(sortedArr));
     }
 }

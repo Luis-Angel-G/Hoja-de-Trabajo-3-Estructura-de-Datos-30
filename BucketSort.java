@@ -6,7 +6,8 @@ public class BucketSort<T extends Comparable<T>> implements IGenericSort<T> {
     @Override
     public T[] sort(T[] arr) {
         int n = arr.length;
-        if (n <= 0) return arr;
+        if (n <= 0)
+            return arr;
 
         @SuppressWarnings("unchecked")
         List<T>[] buckets = new List[n];
@@ -18,8 +19,10 @@ public class BucketSort<T extends Comparable<T>> implements IGenericSort<T> {
         // Encontrar el mínimo y máximo
         T min = arr[0], max = arr[0];
         for (T num : arr) {
-            if (num.compareTo(min) < 0) min = num;
-            if (num.compareTo(max) > 0) max = num;
+            if (num.compareTo(min) < 0)
+                min = num;
+            if (num.compareTo(max) > 0)
+                max = num;
         }
 
         // Normalización con conversión explícita (asumiendo Double.parseDouble())
@@ -58,11 +61,4 @@ public class BucketSort<T extends Comparable<T>> implements IGenericSort<T> {
         }
     }
 
-    public static void main(String[] args) {
-        Double[] arr = { 0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434 };
-        BucketSort<Double> sorter = new BucketSort<>();
-        Double[] sortedArr = sorter.sort(arr);
-
-        System.out.println(Arrays.toString(sortedArr));
-    }
 }

@@ -16,11 +16,4 @@ public class InsertionSort<T extends Comparable<T>> implements IGenericSort<T> {
         return arr;
     }
 
-    public static void main(String[] args) {
-        Integer[] arr = { 3, 1, 4, 1, 5, 9 };
-        InsertionSort<Integer> sorter = new InsertionSort<>();
-        Integer[] sortedArr = sorter.sort(arr);
-
-        System.out.println(Arrays.toString(sortedArr));
-    }
 }

@@ -3,7 +3,8 @@ import java.util.Arrays;
 public class RadixSort<T extends Comparable<T>> implements IGenericSort<T> {
     @Override
     public T[] sort(T[] arr) {
-        if (arr.length == 0) return arr;
+        if (arr.length == 0)
+            return arr;
 
         int n = arr.length;
         T max = findMax(arr);
@@ -47,11 +48,4 @@ public class RadixSort<T extends Comparable<T>> implements IGenericSort<T> {
         System.arraycopy(output, 0, arr, 0, n);
     }
 
-    public static void main(String[] args) {
-        Integer[] arr = { 170, 45, 75, 90, 802, 24, 2, 66 };
-        RadixSort<Integer> sorter = new RadixSort<>();
-        Integer[] sortedArr = sorter.sort(arr);
-
-        System.out.println(Arrays.toString(sortedArr));
-    }
 }
