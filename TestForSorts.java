@@ -21,7 +21,7 @@ public class TestForSorts {
         T[] copia = array.clone();
         long startTime = System.nanoTime();
         sortAlgorithm.sort(copia);
-        return (System.nanoTime() - startTime) / 1_000_000;
+        return (System.nanoTime() - startTime);
     }
 
     public static void main(String[] args) {
